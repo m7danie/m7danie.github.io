@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name - IT Professional</title>
+  <title>Meagan Danielson - IT Professional</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
   <!-- Font Awesome for icons -->
@@ -14,67 +14,111 @@
       line-height: 1.6;
       background-color: #f8f9fa;
     }
+    /* Header */
     header {
-      background-color: #009688; /* Teal */
+      background-color: #009688;
       color: white;
-      padding: 30px 0;
+      padding: 10px 0; /* reduced from 20px 0 */
       text-align: center;
     }
+    /* Larger name inside header */
     header h1 {
-      margin-bottom: 10px;
+      font-size: 3rem;
+      margin-bottom: 0; /* reduced from 5px */
     }
-    section {
+    /* Title section - closer to header */
+    section.title-section {
+      background-color: #009688;
+      color: white;
       padding: 40px 20px;
+      text-align: center;
     }
+    /* Section title styles */
     .section-title {
       margin-bottom: 30px;
     }
-    #contact {
-      background-color: #e9ecef;
+    /* About & Skills */
+    #about {
       padding: 40px 20px;
     }
+    /* Resume & GitHub sections */
+    #resume, #github {
+      padding: 40px 20px;
+    }
+    /* Footer styles */
     footer {
       background-color: #343a40;
       color: #fff;
       padding: 15px 20px;
       text-align: center;
     }
+    /* Icons in form and elsewhere */
     .icon {
       font-size: 1.5rem;
-      margin-right: 15px;
-      color: #009688; /* Teal */
+      margin-right: 10px;
+      color: #009688;
     }
-    .form-control {
-      margin-bottom: 15px;
-    }
+    /* Headshot styling */
     img.headshot {
       max-width: 150px;
       border-radius: 50%;
       margin-bottom: 20px;
     }
+    /* Small horizontal contact form at the bottom */
+    #bottom-contact {
+      background-color: #f8f9f9;
+      padding: 20px;
+    }
+    #bottom-contact form {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #bottom-contact .form-group {
+      flex: 1;
+      min-width: 150px;
+      margin-right: 10px;
+    }
+    #bottom-contact .form-group:last-child {
+      margin-right: 0;
+    }
+    /* Custom button styles */
+    .btn-teal {
+      background-color: #009688;
+      border-color: #009688;
+      color: #fff;
+    }
+    .btn-teal:hover,
+    .btn-teal:focus {
+      background-color: #00796b;
+      border-color: #00796b;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
+
   <!-- Header -->
   <header>
-    <h1>Meagan Danielson</h1>
-  
+    <h1 style="font-size: 3rem; margin-bottom: 0;">Meagan Danielson</h1>
   </header>
-<!-- Title Section -->
-<section style="background-color: #009688; color: white; padding: 60px 20px; text-align: center;">
-  <div class="container">
-    <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Leading Innovation in Enterprise Print</h1>
-    <p style="font-size: 1.25rem;">Senior Manager & Product Owner with 20+ Years Driving Solutions — Passionate About Empowering Teams and Serving Customers</p>
-  </div>
-</section>
+
+  <!-- Title Section -->
+  <section class="title-section">
+    <div class="container">
+      <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Leading Innovation in Enterprise Print</h1>
+      <p style="font-size: 1.25rem;">Senior Manager & Product Owner with 20+ Years Driving Solutions — Passionate About Empowering Teams and Serving Customers</p>
+    </div>
+  </section>
 
   <!-- About & Skills -->
-  <section>
+  <section id="about">
     <div class="container">
       <div class="row align-items-center">
         <!-- Headshot -->
         <div class="col-md-3 text-center mb-4">
-          <img src="web ready-3462_MeaganHeadshot.jpg" alt="Headshot" class="headshot">
+          <img src="web ready-3462_MeaganHeadshot.jpg" alt="Headshot" class="headshot" />
         </div>
         <!-- About Me -->
         <div class="col-md-9 mb-4">
@@ -84,26 +128,17 @@
       </div>
     </div>
   </section>
-<!-- Resume Download -->
-<section id="resume" class="py-5" style="background-color: #f8f9fa;">
-  <div class="container text-center">
-    <h2 class="section-title mb-4">Download My Resume</h2>
-    <p>Interested in learning more about my qualifications and experience? You can download my full resume below.</p>
-    <a href="MDanielson08142025.pdf" class="btn btn-lg" style="background-color: #009688; color: white;" download>
-      <i class="fas fa-file-download"></i> Download Resume
-    </a>
-  </div>
-</section>
-<!-- GitHub Repositories -->
-<section id="github" class="py-5" style="background-color: #f8f9fa;">
-  <div class="container text-center">
-    <h2 class="section-title mb-4">My GitHub Repositories</h2>
-    <p>Explore my projects and contributions on GitHub:</p>
-    <a href="https://github.com/m7danie" target="_blank" class="btn btn-lg" style="background-color: #333; color: #fff;">
-      <i class="fab fa-github"></i> View My GitHub
-    </a>
-  </div>
-</section>
+
+  <!-- Resume Download -->
+  <section id="resume" class="py-5" style="background-color: #f8f9f9; margin-bottom: 40px;">
+    <div class="container text-center">
+      <h2 class="section-title mb-4">Download My Resume</h2>
+      <p>Interested in learning more about my qualifications and experience? You can download my full resume below.</p>
+      <a href="MDanielson_Resume.pdf" class="btn btn-teal btn-lg" download>
+        <i class="fas fa-file-download"></i> Download Resume
+      </a>
+    </div>
+  </section>
 
   <!-- Contact -->
   <section id="contact">
@@ -122,9 +157,24 @@
           <label for="message"><i class="fas fa-comment-dots icon"></i></label>
           <input type="text" class="form-control" id="message" name="message" placeholder="Message" required />
         </div>
-        <button type="submit" class="btn btn
+        <button type="submit" class="btn btn-teal">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Meagan Danielson. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
 
 
- 
+
 
 
