@@ -95,82 +95,166 @@
       border-color: #00796b;
       color: #fff;
     }
+    /* Sidebar styles */
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 200px;
+      background: #009688;
+      color: #fff;
+      padding-top: 40px;
+      z-index: 1000;
+      transition: left 0.3s;
+    }
+    #sidebar.closed {
+      left: -200px;
+    }
+    #sidebar ul li a {
+      color: #fff !important;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: block;
+      padding: 10px 20px;
+      transition: background 0.2s;
+    }
+    #sidebar ul li a:hover {
+      background: #00796b;
+      color: #fff !important;
+      text-decoration: none;
+    }
+    /* Main content wrapper */
+    .main-content {
+      margin-left: 200px;
+      padding: 20px;
+      transition: margin-left 0.3s;
+    }
+    .main-content.expanded {
+      margin-left: 0;
+    }
+    /* Toggle button styles */
+    #sidebarToggle {
+      position: fixed;
+      top: 20px;
+      left: 210px;
+      z-index: 1101;
+      background: #009688;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 12px;
+      cursor: pointer;
+      transition: left 0.3s;
+    }
+    #sidebar.closed ~ #sidebarToggle {
+      left: 20px !important;
+    }
   </style>
 </head>
 <body>
+  <!-- Sidebar Navigation -->
+  <nav id="sidebar" class="closed">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+      <li>
+        <a href="costumes.html">
+          <i class="fas fa-mask"></i> Costumes
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-  <!-- Header -->
-  <header>
-    <h1 style="font-size: 3rem; margin-bottom: 0;">Meagan Danielson</h1>
-  </header>
+  <!-- Sidebar Toggle Button -->
+  <button id="sidebarToggle">
+    <i class="fas fa-bars"></i>
+  </button>
 
-  <!-- Title Section -->
-  <section class="title-section">
-    <div class="container">
-      <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Leading Innovation in Enterprise Print</h1>
-      <p style="font-size: 1.25rem;">Senior Manager & Product Owner with 20+ Years Driving Solutions — Passionate About Empowering Teams and Serving Customers</p>
-    </div>
-  </section>
-
-  <!-- About & Skills -->
-  <section id="about">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Headshot -->
-        <div class="col-md-3 text-center mb-4">
-          <img src="web ready-3462_MeaganHeadshot.jpg" alt="Headshot" class="headshot" />
-        </div>
-        <!-- About Me -->
-        <div class="col-md-9 mb-4">
-          <h2 class="section-title">About Me</h2>
-          <p>I am a highly skilled IT professional with over 20 years of experience managing complex systems, ensuring cybersecurity, and deploying innovative solutions that drive business success.</p>
+  <!-- Main Content Wrapper -->
+  <div class="main-content expanded">
+    <!-- Move ALL your main content inside here -->
+    <header>
+      <h1 style="font-size: 3rem; margin-bottom: 0;">Meagan Danielson</h1>
+    </header>
+    <section class="title-section">
+      <div class="container">
+        <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Leading Innovation in Enterprise Print</h1>
+        <p style="font-size: 1.25rem;">Senior Manager & Product Owner with 20+ Years Driving Solutions — Passionate About Empowering Teams and Serving Customers</p>
+      </div>
+    </section>
+    <section id="about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center mb-4">
+            <img src="web ready-3462_MeaganHeadshot.jpg" alt="Headshot" class="headshot" />
+          </div>
+          <div class="col-md-9 mb-4">
+            <h2 class="section-title">About Me</h2>
+            <p>I am a highly skilled IT professional with over 20 years of experience managing complex systems, ensuring cybersecurity, and deploying innovative solutions that drive business success.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+    <section id="resume" class="py-5" style="background-color: #f8f9f9; margin-bottom: 40px;">
+      <div class="container text-center">
+        <h2 class="section-title mb-4">Download My Resume</h2>
+        <p>Interested in learning more about my qualifications and experience? You can download my full resume below.</p>
+        <a href="MDanielson_Resume.pdf" class="btn btn-teal btn-lg" download>
+          <i class="fas fa-file-download"></i> Download Resume
+        </a>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title text-center mb-4">Contact Me</h2>
+        <form id="contactForm" action="mailto:your.email@example.com" method="POST" enctype="text/plain" style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between;">
+          <div class="form-group flex-fill mr-2">
+            <label for="name"><i class="fas fa-user icon"></i></label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
+          </div>
+          <div class="form-group flex-fill mr-2">
+            <label for="email"><i class="fas fa-envelope icon"></i></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="form-group flex-fill mr-2">
+            <label for="message"><i class="fas fa-comment-dots icon"></i></label>
+            <input type="text" class="form-control" id="message" name="message" placeholder="Message" required />
+          </div>
+          <button type="submit" class="btn btn-teal">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <p class="mb-0">&copy; 2025 Meagan Danielson. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
 
-  <!-- Resume Download -->
-  <section id="resume" class="py-5" style="background-color: #f8f9f9; margin-bottom: 40px;">
-    <div class="container text-center">
-      <h2 class="section-title mb-4">Download My Resume</h2>
-      <p>Interested in learning more about my qualifications and experience? You can download my full resume below.</p>
-      <a href="MDanielson_Resume.pdf" class="btn btn-teal btn-lg" download>
-        <i class="fas fa-file-download"></i> Download Resume
-      </a>
-    </div>
-  </section>
+  <script>
+    // Toggle sidebar open/close
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.querySelector('.main-content');
+    const toggleBtn = document.getElementById('sidebarToggle');
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title text-center mb-4">Contact Me</h2>
-      <form id="contactForm" action="mailto:your.email@example.com" method="POST" enctype="text/plain" style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between;">
-        <div class="form-group flex-fill mr-2">
-          <label for="name"><i class="fas fa-user icon"></i></label>
-          <input type="text" class="form-control" id="name" name="name" placeholder="Name" required />
-        </div>
-        <div class="form-group flex-fill mr-2">
-          <label for="email"><i class="fas fa-envelope icon"></i></label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
-        </div>
-        <div class="form-group flex-fill mr-2">
-          <label for="message"><i class="fas fa-comment-dots icon"></i></label>
-          <input type="text" class="form-control" id="message" name="message" placeholder="Message" required />
-        </div>
-        <button type="submit" class="btn btn-teal">
-          <i class="fas fa-paper-plane"></i> Send Message
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p class="mb-0">&copy; 2025 Meagan Danielson. All Rights Reserved.</p>
-    </div>
-  </footer>
-
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('closed');
+      mainContent.classList.toggle('expanded');
+      // Move toggle button when sidebar is closed
+      if (sidebar.classList.contains('closed')) {
+        toggleBtn.style.left = '20px';
+      } else {
+        toggleBtn.style.left = '210px';
+      }
+    });
+  </script>
 </body>
 </html>
 
