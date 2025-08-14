@@ -3,48 +3,97 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meagan Danielson</title>
+  <title>Meagan Danielson - IT Professional</title>
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
+      line-height: 1.6;
       background-color: #f8f9fa;
     }
     header {
-      padding: 20px;
-      background-color: #343a40;
+      background-color: #0d6efd;
       color: white;
+      padding: 30px 0;
       text-align: center;
+    }
+    header h1 {
+      margin-bottom: 10px;
     }
     section {
-      padding: 20px;
+      padding: 40px 20px;
+    }
+    .section-title {
+      margin-bottom: 30px;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    #contact {
+      background-color: #e9ecef;
+      padding: 40px 20px;
     }
     footer {
-      padding: 10px;
-      text-align: center;
       background-color: #343a40;
-      color: white;
+      color: #fff;
+      padding: 15px 20px;
+      text-align: center;
+    }
+    /* Custom styles for icons and contact form */
+    .icon {
+      font-size: 1.5rem;
+      margin-right: 15px;
+      color: #0d6efd;
+    }
+    .form-control {
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <h1>Meagan Danielson</h1>
-    <p>IT Manager | Enterprise Print</p>
+    <p class="lead">IT Manager | Enterprise Print</p>
+    <p><a href="#resume" class="btn btn-light mt-3">Download Resume</a></p>
   </header>
+
+  <!-- About & Skills -->
   <section>
     <div class="container">
-      <h2>About Me</h2>
-      <p>I am a highly skilled IT professional with over 20 years of experience managing complex systems and teams. I focus on providing reliable IT solutions that align with business goals.</p>
+      <div class="row">
+        <!-- About Me -->
+        <div class="col-md-6 mb-4">
+          <h2 class="section-title">About Me</h2>
+          <p>I am a highly skilled IT professional with over 20 years of experience managing complex systems, ensuring cybersecurity, and deploying innovative solutions that drive business success.</p>
+        </div>
 
-      <h2>Contact</h2>
-      <p>Email: meagan.danielson@gmail.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/meagandanielson" target="_blank">linkedin.com/in/meagandanielson</a></p>
+
+  <!-- Resume Download -->
+  <section id="resume" class="text-center">
+    <div class="container">
+      <h2 class="section-title">My Resume</h2>
+      <p>Download my detailed resume to see my experience and certifications.</p>
+      <a href="your_resume.pdf" class="btn btn-primary btn-lg" download>
+        <i class="fas fa-file-download"></i> Download Resume
+      </a>
     </div>
   </section>
-  <footer>
-    &copy; 2025 Meagan Danielson
-  </footer>
-</body>
-</html>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title text-center mb-4">Contact Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form id="contactForm" action="mailto:your.email@example.com" method="POST" enctype="text/plain">
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user icon"></i>Name</label>
+              <input type="text" class="form-control" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <
 
